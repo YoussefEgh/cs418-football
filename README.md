@@ -2,7 +2,7 @@
 ## Research Question
 Home-Field Advantage in Soccer - How does playing at home affect team performance and match outcomes? 
 
-### Primary dataset 1: Premier League matches 2025/26 (Zc4466: Lu)
+### Primary dataset 1: Premier League matches 2025/26 (Lu)
 
 I got this from football-data.co.uk (https://www.football-data.co.uk/englandm.php). The file is 'E0.csv', and the column names are explained here: https://www.football-data.co.uk/notes.txt. It's loaded in ‘data_acquisition.ipynb’.
 
