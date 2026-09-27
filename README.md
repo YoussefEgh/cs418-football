@@ -18,6 +18,24 @@ What's in it:
 
 Quick look: home teams won 42.6% of games vs 30.0% for away teams (27.4% draws). Home teams also scored more (1.53 vs 1.22 goals) and took more shots (13.8 vs 11.2). They got fewer yellow cards (1.67 vs 2.08) even though fouls were about the same (10.7 vs 11.0). This is just one season so I can't say much yet.
 
+### Primary dataset 2: International football results (Hannan)
+I got this dataset from: (https://github.com/martj42/international_results/blob/master/results.csv). The file is 'results.csv', and it's loaded in 'International_matches.ipynb'.
+
+I picked this dataset because it shows the home, away, and neutral international games, and I found the neutral column to be important because it gives us extra information to look at. It also gives us a no home advantage baseline to compare real home games against, which the Premier League dataset can't do since every league game has a home team.
+
+What's in it:
+
+- 49,547 rows and 9 columns, and each row is a men’s international match.
+- It covers 30 Nov 1872 to 26 Aug 2026 worldwide (national teams).
+- 36,389 matches were played at home and 13,158 at a neutral venue.
+- No missing values in any columns.
+- Extra time scores are included but not penalty shootouts.
+- Only the results are recorded, no attendance. 
+- Columns being used: ‘date’(date), ‘home_team’, ‘away_team’, ‘tournament’, ‘city’,‘country’ (strings) , ‘home_score’ and ‘away_score’(ints), ‘neutral’(boolean).
+
+Quick look: Home teams averaged 1.76 goals vs 1.18 away. At home venues the home team won 50.7%, and at neutral venues the team listed won 44.2%, a gap of about 6.5 points.
+
+
 
 ### Secondary dataset 1: Historical Premier League team performance (Nate)
 
