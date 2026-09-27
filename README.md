@@ -17,3 +17,20 @@ What's in it:
 - it doesn't have possession, xG or attendance, so we'd need another source for those
 
 Quick look: home teams won 42.6% of games vs 30.0% for away teams (27.4% draws). Home teams also scored more (1.53 vs 1.22 goals) and took more shots (13.8 vs 11.2). They got fewer yellow cards (1.67 vs 2.08) even though fouls were about the same (10.7 vs 11.0). This is just one season so I can't say much yet.
+
+
+### Secondary dataset 1: Historical Premier League team performance (Nate)
+
+I got this dataset from Kaggle (https://www.kaggle.com/datasets/alibakikoyuncu/tm-epl-9293-ranking?resource=download). The file is `epl_data.csv`, and it's loaded in `data_acquisition.ipynb`.
+
+I picked it because it contains separate home and away performance statistics for Premier League teams across many seasons, so it's useful for comparing how teams perform at home vs away over time.
+
+What's in it:
+- 666 rows and 18 columns, one row represents one Premier League team's performance during one season
+- covers Premier League seasons from 1992 through 2024
+- columns I'm using: `season`, `team_name`, `home_matches_ranking`, `away_matches_ranking`, `home_matches_win`, `home_matches_draw`, `home_matches_lost`, `away_matches_win`, `away_matches_draw`, `away_matches_lost`, and `home_matches_pts`
+- `team_name` is a string, while `season`, rankings, wins, draws, losses, points, and other match statistics are integers
+- `average_age` is stored as a float
+- there are no missing values in any of the 18 columns
+- unlike the match-level dataset, this dataset summarizes each team's performance for an entire season rather than individual matches
+- because it includes separate home and away records, we can use it to compare team performance at home vs away and examine home-field advantage across multiple Premier League seasons
