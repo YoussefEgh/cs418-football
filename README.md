@@ -36,6 +36,24 @@ What's in it:
 Quick look: Home teams averaged 1.76 goals vs 1.18 away. At home venues the home team won 50.7%, and at neutral venues the team listed won 44.2%, a gap of about 6.5 points.
 
 
+### Primary dataset 3: Top 5 leagues & Champions League Football Matches 2024/2025 (Youssef)
+
+I got this dataset from GitHub ([https://github.com/tarekmasryo/football-matches-2025-dataset](https://github.com/tarekmasryo/football-matches-2025-dataset)). The data was originally collected through the Football-Data.org API. The file is `football_matches_2024_2025.csv`, and it is loaded in `football_matches_2024_2025.ipynb`.
+
+I picked this dataset because it contains match-level home and away results across multiple major European leagues and the UEFA Champions League, which allows us to compare home-field advantage across different competitions.
+
+What's in it:
+
+- 1,941 rows and 23 columns, and each row represents one football match.
+- It covers the 2024/2025 season from August 15, 2024 through May 31, 2025.
+- It includes six competitions: Premier League, La Liga, Serie A, Bundesliga, Ligue 1, and UEFA Champions League.
+- Geographically, the domestic leagues cover England, Spain, Italy, Germany, and France, while the Champions League includes clubs from across Europe.
+- Columns I'm using: `competition_name`, `date_utc`, `home_team`, `away_team`, `fulltime_home`, `fulltime_away`, `match_outcome`, `home_points`, `away_points`, and `stage`.
+- `competition_name`, `date_utc`, `home_team`, `away_team`, `match_outcome`, and `stage` are read in as strings/objects. `fulltime_home`, `fulltime_away`, `home_points`, and `away_points` are integers.
+- There are no missing values in the 23 columns.
+- The dataset contains 380 Premier League matches, 380 La Liga matches, 380 Serie A matches, 306 Bundesliga matches, 306 Ligue 1 matches, and 189 UEFA Champions League matches.
+- Because the dataset includes both the home and away teams, their scores, and the match outcome, we can use it to compare home and away win rates across different competitions.
+
 
 ### Secondary dataset 1: Historical Premier League team performance (Nate)
 
@@ -55,7 +73,7 @@ What's in it:
 
 
 
-### Secondary dataset 2: 2020/2021 Premier League Season Stats
+### Secondary dataset 2: 2020/2021 Premier League Season Stats (Dominic)
 
 I got this dataset from 'https://football-data.co.uk/englandm.php'. The data file is 'epl_2020.csv' and it is loaded in 'epl_2020.ipynb'. 
 
