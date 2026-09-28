@@ -2,23 +2,8 @@
 ## Research Question
 Home-Field Advantage in Soccer - How does playing at home affect team performance and match outcomes? 
 
-### Primary dataset 1: Premier League matches 2025/26 (Lu)
 
-I got this from football-data.co.uk (https://www.football-data.co.uk/englandm.php). The file is 'E0.csv', and the column names are explained here: https://www.football-data.co.uk/notes.txt. It's loaded in ‘data_acquisition.ipynb’.
-
-I picked it because each row has both the home and away team's stats for the same game, so it's easy to compare home vs away.
-
-What's in it:
-- 380 rows and 132 columns, one row is one match
-- the whole 2025/26 season, 20 teams, each plays 19 home and 19 away
-- most of the 132 columns are betting odds, only kept 19 for now
-- columns I'm using: `Date` (read in as a string, I converted it to a date), ‘HomeTeam’, ‘Away’, ‘Referee’, and ‘FTR’ (H/D/A result) are strings. Goals (‘FTHG‘/’FTAG’), shots (‘HS’/‘AS’), shots on target (‘HST’/‘AST’), corners (‘HC’/‘AC’), fouls (‘HF’/‘AF’), yellow cards (‘HY’/‘AY’) and red cards (‘HR’/‘AR’) are all ints
-- no missing values in any of those
-- it doesn't have possession, xG or attendance, so we'd need another source for those
-
-Quick look: home teams won 42.6% of games vs 30.0% for away teams (27.4% draws). Home teams also scored more (1.53 vs 1.22 goals) and took more shots (13.8 vs 11.2). They got fewer yellow cards (1.67 vs 2.08) even though fouls were about the same (10.7 vs 11.0). This is just one season so I can't say much yet.
-
-### Primary dataset 2: International football results (Hannan)
+### Primary dataset 1: International football results (Hannan)
 I got this dataset from: (https://github.com/martj42/international_results/blob/master/results.csv). The file is 'results.csv', and it's loaded in 'International_matches.ipynb'.
 
 I picked this dataset because it shows the home, away, and neutral international games, and I found the neutral column to be important because it gives us extra information to look at. It also gives us a no home advantage baseline to compare real home games against, which the Premier League dataset can't do since every league game has a home team.
@@ -36,7 +21,7 @@ What's in it:
 Quick look: Home teams averaged 1.76 goals vs 1.18 away. At home venues the home team won 50.7%, and at neutral venues the team listed won 44.2%, a gap of about 6.5 points.
 
 
-### Primary dataset 3: Top 5 leagues & Champions League Football Matches 2024/2025 (Youssef)
+### Primary dataset 2: Top 5 leagues & Champions League Football Matches 2024/2025 (Youssef)
 
 I got this dataset from GitHub ([https://github.com/tarekmasryo/football-matches-2025-dataset](https://github.com/tarekmasryo/football-matches-2025-dataset)). The data was originally collected through the Football-Data.org API. The file is `football_matches_2024_2025.csv`, and it is loaded in `football_matches_2024_2025.ipynb`.
 
@@ -84,3 +69,21 @@ What's in it:
 - 106 rows
 - Includes every single game from the 2020/2021 season including their results, goals, shots taken, shots on target, etc.
 - Kept 9 of the columns as the rest seemed irrelevant
+
+
+
+### Secondary dataset 3: Premier League matches 2025/26 (Lu)
+
+I got this from football-data.co.uk (https://www.football-data.co.uk/englandm.php). The file is 'E0.csv', and the column names are explained here: https://www.football-data.co.uk/notes.txt. It's loaded in ‘data_acquisition.ipynb’.
+
+I picked it because each row has both the home and away team's stats for the same game, so it's easy to compare home vs away.
+
+What's in it:
+- 380 rows and 132 columns, one row is one match
+- the whole 2025/26 season, 20 teams, each plays 19 home and 19 away
+- most of the 132 columns are betting odds, only kept 19 for now
+- columns I'm using: `Date` (read in as a string, I converted it to a date), ‘HomeTeam’, ‘Away’, ‘Referee’, and ‘FTR’ (H/D/A result) are strings. Goals (‘FTHG‘/’FTAG’), shots (‘HS’/‘AS’), shots on target (‘HST’/‘AST’), corners (‘HC’/‘AC’), fouls (‘HF’/‘AF’), yellow cards (‘HY’/‘AY’) and red cards (‘HR’/‘AR’) are all ints
+- no missing values in any of those
+- it doesn't have possession, xG or attendance, so we'd need another source for those
+
+Quick look: home teams won 42.6% of games vs 30.0% for away teams (27.4% draws). Home teams also scored more (1.53 vs 1.22 goals) and took more shots (13.8 vs 11.2). They got fewer yellow cards (1.67 vs 2.08) even though fouls were about the same (10.7 vs 11.0). This is just one season so I can't say much yet.
