@@ -2,6 +2,8 @@
 ## Research Question
 Home-Field Advantage in Soccer - How does playing at home affect team performance and match outcomes? 
 
+## Group Members: Youssef Elghawabi, Dominic Aidoo, Nate Rodriguez, Zonghong Lu, Hannan Shahid
+
 
 ### Primary dataset 1: International football results (Hannan)
 I got this dataset from: (https://github.com/martj42/international_results/blob/master/results.csv). The file is 'results.csv', and it's loaded in 'International_matches.ipynb'.
