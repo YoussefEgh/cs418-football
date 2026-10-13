@@ -42,7 +42,8 @@ The average goal difference was approximately +0.20 goals, while the median was 
 
 The Premier League, La Liga, and Serie A each contain 380 matches, while the Bundesliga and Ligue 1 each contain 305 matches. The Champions League has the fewest matches, with 189. Since the competitions have different numbers of matches, comparing raw home-win counts could be misleading. Therefore, comparing home-win percentages across competitions will help us investigate whether home advantage differs between them.
 
-## 4. Relationships Between Home-Win Percentage Across Competitions
+## 4. Relationships 
+Add relationship plot for Home-Win Percentage Across Competitions
 
 ### 5 - So What?
 
