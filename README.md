@@ -89,3 +89,44 @@ What's in it:
 - it doesn't have possession, xG or attendance, so we'd need another source for those
 
 Quick look: home teams won 42.6% of games vs 30.0% for away teams (27.4% draws). Home teams also scored more (1.53 vs 1.22 goals) and took more shots (13.8 vs 11.2). They got fewer yellow cards (1.67 vs 2.08) even though fouls were about the same (10.7 vs 11.0). This is just one season so I can't say much yet.
+
+
+
+### Exploratory Analysis
+
+## Basics About the Datasets
+
+Our analysis uses two primary datasets and three secondary datasets to investigate home-field advantage in soccer. The primary datasets include 49,547 international football matches from 1872–2026 and 1,941 European football matches from the 2024/25 season across six competitions. The secondary datasets cover historical Premier League team performance, the 2020/21 Premier League season, and the 2025/26 Premier League season.
+
+## Revised Research Questions
+
+Our original research question was: How does playing at home affect team performance and match outcomes?
+
+Based on our exploratory analysis, we proposed these revised questions:
+
+How does home-field advantage vary across European football competitions when comparing home-win, away-win, and draw percentages?
+
+How much does playing at home increase a team's chance of winning compared to a neutral venue, and does this advantage change with match importance over time?
+
+Does home advantage shrink or disappear without fans, and does it come back when they return?
+
+
+## Anomalies
+
+| Anomaly | Rows affected | Action |
+
+| Awarded matches in 2024/25 dataset | 2 | Excluded from analysis |
+| `date_utc` stored as an object | 1,939 | Converted to datetime |
+| Unknown referee information | 3 | Kept and flagged |
+| International matches sharing dates and teams but having different scores | 2 | Noted as potentially separate matches |
+| International home-country mismatches | 979 | Used neutral column to distinguish venue types |
+| Incomplete 2024 season in historical EPL data | 20 | Excluded; used full 2024/25 dataset instead |
+| Different season and match-result formats | All relevant rows | Standardized season and outcome formats |
+| Behind-closed-doors matches within 2019/20 | 92 | Flagged |
+
+
+## Significant Findings
+
+In the 2024/25 European dataset, home teams won 832 matches, compared to 644 away wins and 463 draws. Home teams averaged 1.54 goals per match, compared to 1.34 for away teams.
+
+Home-win percentages differed across European competitions. The Champions League had the highest home-win percentage at 50.79%, while the Bundesliga had the lowest at 38.69%.
