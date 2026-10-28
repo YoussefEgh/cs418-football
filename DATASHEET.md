@@ -46,6 +46,13 @@ Each of us adds our own part under the matching section.
   - There is no attendance data, so we only know "fans" vs. "no fans", not how many people were there.
   - 2020/21 also had a packed schedule and almost no preseason, and a few matches still had small crowds. These could affect results too, so our data suggests home advantage was weaker that season, but it does not show that missing fans *caused* it.
 
+
+### International Football Results (Hannan)
+
+**Question:** How much does playing at home raise a team’s chance of winning compared to a neutral venue, and does this change with match importance, and over time?
+
+The target population is all men’s senior international matches ever played. The Access frame is the matches the creator found online and recorded. The sample is all 49,547 rows, and the time trend plot uses 1950 onward. Some of the limits include club / women’s football. Trends before 1950 are unreliable. I don’t think we can show the direct reason only based on this dataset of why home teams win more, but we can show that they win more. 
+
 ## 3. Codebook
 ### `epl_data.csv` - Historical Premier League Statistics (Nate Rodriguez)
 
@@ -65,6 +72,25 @@ Each of us adds our own part under the matching section.
 | 'HY' | Numeric | Yellow cards | Number of yellow cards received by the home team | Nonnegative integers | Missing rows removed using 'dropna()' | `data/epl_2020.csv` |
 | 'AY' | Numeric | Yellow cards | Number of yellow cards received by the away team | Nonnegative integers | Missing rows removed using 'dropna()' | `data/epl_2020.csv` |
 | 'Group' | Integer | Group number | Sequential group of 20 matches sorted by date | 1-19 | None after creation | Derived in `eda.ipynb` |
+
+
+### International Football Results (Hannan)
+
+| Column | Type | Meaning | Values | Source |
+| :---- | :---- | :---- | :---- | :---- |
+| date | Date | Match day | 1872 to 2026 | Raw |
+| home\_team | String | First listed / home | 337 teams in total | Raw |
+| away\_team | String | Second listed / away | 337 | Raw |
+| away\_score | Int | Away goals, same rules | 0–21 | Raw |
+| tournament | String | Competition name | 202 values | Raw |
+| city | String | City where played | 2,093 values | Raw |
+| country | String | Country where played, name at the time | 269 values | Raw |
+| neutral | Boolean | TRUE if neither team is at home | TRUE 13,158 / FALSE 36,389 | Raw |
+| match\_type | String | Friendly or competitive | Friendly 18,385 / Competitive 31,162 | Derived  |
+| goal\_diff | Int | `Goal difference` | −21 to 31 | Derived |
+| year | Int | Year of `date` | 1872–2026 | Derived  |
+| result | String | Outcome for first-listed team | Win / Draw / Loss | Derived  |
+
 
 ## 4. Recipe
 ### Data Preparation Recipe - Nate Rodriguez
