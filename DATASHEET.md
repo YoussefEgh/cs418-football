@@ -57,6 +57,35 @@ This section explains how the historical Premier League data and the 2020/21 yel
 5. **Check data types and missing records.** The displayed preparation code does not show explicit type conversions or dropped rows for this dataset. Any earlier cleaning must be checked in `data_acquisition.ipynb`.
 6. **Joins.** No join is performed in the historical filtering and match-total validation steps shown above. If this dataset is combined with another file later in the analysis, the join keys and matched/unmatched row counts must be added here.
 
+### B. Home Vs. Away Yellow Card Analysis
+**Input file:** `data/epl_2020.csv`
+**Code reference:** `eda.ipynb`, "Home vs Away Yellow Card Analysis (2020/21 Premier League) - Nate Rodriguez"
+1. **Acquire the raw data.** The match-level dataset is stored in `data/epl_2020.csv`.
+
+2. **Load the CSV.** An earlier section of `eda.ipynb` loads the file into a Pandas DataFrame:
+   `df = pd.read_csv("data/epl_2020.csv")`
+
+3. **Select columns and remove missing records.** Keep only `Date`, `HY`, and `AY`, removing rows with missing values in any of these fields:
+   `yellow_cards = df[["Date", "HY", "AY"]].dropna().copy()`
+
+4. **Convert dates.** Convert `Date` column into datetime values, interpreting dates with the day first:
+   `yellow_cards["Date"] = pd.to_datetime(yellow_cards["Date"], dayfirst=True)`
+
+5. **Sort matches.** Sort by `Date` and reset the index:
+   `yellow_cards = yellow_cards.sort_values("Date").reset(drop=True)`
+
+6. **Create a derived column.** Create `Group` to assign every 20 consecutive matches to a group:
+   `yellow_cards["Group"] = np.arrange(len(yellow_cards)) // 20 + 1`
+
+7. **Aggregate the data.** Group by `Group` and calculate the average home and away yellow cards:
+   `grouped = yellow_cards.groupby("Group")[["HY", "AY"]].mean()`
+    
+8. **Calculate overall averages.** Calculate 'home_avg', 'away_avg', and 'combined_avg' using the mean yellow-card counts.
+    
+9. **Joins.** No joins with secondary datasets are performed in this yellow-card analysis. Therefore, there are no join keys or matched/unmatched join counts to report.
+
+10. **Output.** The analysis reports 380 matches, organized into 19 groups of 20 matches. The reported overall averages are 1.424 home yellow cards and 1.447 away yellow cards per match.
+
 
 ## 5. Access & Reuse (FAIR)
 
