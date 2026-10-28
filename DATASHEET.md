@@ -4,6 +4,7 @@ Each of us adds our own part under the matching section.
 
 ## 1. Datasheets (primary datasets)
 
+
 ## 2. Scope
 
 ### RQ3 — Home advantage with and without fans (Lu)
@@ -20,7 +21,16 @@ Each of us adds our own part under the matching section.
   - 2020/21 also had a packed schedule and almost no preseason, and a few matches still had small crowds. These could affect results too, so our data suggests home advantage was weaker that season, but it does not show that missing fans *caused* it.
 
 ## 3. Codebook
+### 'epl_data.csv' - Historical Premier League Statistics (Nate Rodriguez)
 
+| Column | Data Type | Units | Meaning | Allowed Values | Missing Values | Origin |
+|---|---|---|---|---|---|---|
+| 'season' | Integer | Year | Starting year of the season | 1992 onward | Not yet verified | Original CSV |
+| 'team_name' | String | N/A | Name of the football club | Club names | Not yet verified | Original CSV |
+| 'overall_ranking' | Integer | Rank | Final league position | Positive integers | Not yet verified | Original CSV |
+| 'home_matches_ranking' | Integer | Rank | Ranking based on home performance | Positive integers | Not yet verified | Original CSV | 
+| 'away_matches_ranking' | Integer | Rank | Ranking based on away performance | Positive integers | Not yet verified | Original CSV |
+| 'matches_played' | Integer | Matches | Number of matches played | Nonnegative integers | Not yet verified | Original CSV |
 ## 4. Recipe
 
 ## 5. Access & Reuse (FAIR)
