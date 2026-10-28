@@ -138,6 +138,9 @@ This section explains how the historical Premier League data and the 2020/21 yel
 
 10. **Output.** The analysis reports 380 matches, organized into 19 groups of 20 matches. The reported overall averages are 1.424 home yellow cards and 1.447 away yellow cards per match.
 
+### International Football Results (Hannan)
+Download the file: [https\://raw.githubusercontent.com/martj42/international\_results/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv](https://raw.githubusercontent.com/martj42/international_results/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv), saved as data/results.csv. Load it, and parse the date as Date which would be 49,547 x 9\. Check to see that no rows were dropped. Derive the match\_type, goal\_diff, and year. Derive result in a copy called res. Filter per plot only for example: year \>= 1950\. 
+
 
 ## 5. Access & Reuse (FAIR)
 
@@ -148,4 +151,21 @@ This section explains how the historical Premier League data and the 2020/21 yel
 - **Interoperable:** Plain CSV, comma-separated, dates in `dd/mm/yyyy`. It has 132 columns, but most are betting odds; we use 19 of them.
 - **Reusable:** There is no formal license, but the site has a "Fair data usage policy" (https://www.football-data.co.uk/contact.php). It says the free data "is intended for private individuals only for personal betting and/or academic interest and research, via manual download or at most light (twice per week maximum) automated download. It is NOT intended for commerical [sic] or data training projects." Our class project fits this, since we downloaded the file once by hand. Because of these limits, others can reuse our code and summary numbers for academic work, but they should download the raw file from football-data.co.uk themselves, and should not use it for commercial or AI-training projects.
 
+### International Football Results (Hannan)
+
+Findable: [https\://github.com/martj42/international\_results/blob/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv](https://github.com/martj42/international_results/blob/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv) 
+
+Accessable: Public on github, accessed in October 2026\.
+
+Interoperable: CSV, 3.7 MB.
+
+Reusable: CC0 .10. 
+
 ## 6. People in the data (CARE)
+### International Football Results (Hannan)
+This dataset does not record individual player names, but rather records national teams. Player names only appear in goalscorers.csv, which we are not using. Though there are still some groups which could get misrepresented:
+
+- Some under recorded countries, generally Europe and South American countries have more well documented stats.  
+- Very small nations can at times give lopsided results like American Samoa’s 31-0 loss. 
+
+The data is free and public domain, and obviously this should not be used to rank a nation's overall wealth for non football related information.
