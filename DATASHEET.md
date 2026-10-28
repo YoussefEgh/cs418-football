@@ -25,12 +25,20 @@ Each of us adds our own part under the matching section.
 
 | Column | Data Type | Units | Meaning | Allowed Values | Missing Values | Origin |
 |---|---|---|---|---|---|---|
-| 'season' | Integer | Year | Starting year of the season | 1992 onward | Not yet verified | Original CSV |
-| 'team_name' | String | N/A | Name of the football club | Club names | Not yet verified | Original CSV |
-| 'overall_ranking' | Integer | Rank | Final league position | Positive integers | Not yet verified | Original CSV |
-| 'home_matches_ranking' | Integer | Rank | Ranking based on home performance | Positive integers | Not yet verified | Original CSV | 
-| 'away_matches_ranking' | Integer | Rank | Ranking based on away performance | Positive integers | Not yet verified | Original CSV |
-| 'matches_played' | Integer | Matches | Number of matches played | Nonnegative integers | Not yet verified | Original CSV |
+| 'season' | Integer | Year | Starting year of the season | 1992 onward | Not yet verified | `data/epl_data.csv` |
+| 'team_name' | String | N/A | Name of the football club | Club names | Not yet verified | `data/epl_data.csv` |
+| 'overall_ranking' | Integer | Rank | Final league position | Positive integers | Not yet verified | `data/epl_data.csv` |
+| 'home_matches_ranking' | Integer | Rank | Ranking based on home performance | Positive integers | Not yet verified | `data/epl_data.csv` | 
+| 'away_matches_ranking' | Integer | Rank | Ranking based on away performance | Positive integers | Not yet verified | `data/epl_data.csv` |
+| 'matches_played' | Integer | Matches | Number of matches played | Nonnegative integers | Not yet verified | `data/epl_data.csv` |
+
+### 'epl_2020.csv - Home Vs Away Yellow Card Analysis (Nate Rodriguez)
+| Column | Data Type | Units | Meaning | Allowed Values | Missing Values | Origin |
+|---|---|---|---|---|---|---|
+| 'Date' | Date | Calendar date | Date of the Premier League match | Valid match dates | Missing rows removed using 'dropna()' | 'data/epl_2020.csv' |
+| 'HY' | Numeric | Yellow cards | Number of yellow cards received by the home team | Nonnegative integers | Missing rows removed using 'dropna()' | 'data/epl_2020.csv' |
+| 'AY' | Numeric | Yellow cards | Number of yellow cards received by the away team | Nonnegative integers | Missing rows removed using 'dropna()' | 'data/epl_2020.csv' |
+| 'Group' | Integer | Group number | Sequential group of 20 matches sorted by date | 1-19 | None after creation | Derived in 'eda.ipynb' |
 ## 4. Recipe
 
 ## 5. Access & Reuse (FAIR)
