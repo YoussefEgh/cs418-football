@@ -57,6 +57,20 @@ This section explains how the historical Premier League data and the 2020/21 yel
 5. **Check data types and missing records.** The displayed preparation code does not show explicit type conversions or dropped rows for this dataset. Any earlier cleaning must be checked in `data_acquisition.ipynb`.
 6. **Joins.** No join is performed in the historical filtering and match-total validation steps shown above. If this dataset is combined with another file later in the analysis, the join keys and matched/unmatched row counts must be added here.
 
+### Data Preparation Recipe - Dominic Aidoo
+
+**Step 1: Downloads & Loading**
+*   **Action:** Downloaded the primary 2020/2021 match dataset (`epl_2020.csv`) from Football-Data.co.uk.
+*   **Code:** `df = pd.read_csv('data/epl_2020.csv')`
+
+**Step 2: Filters**
+*   **Action:** Filtered out the irrelevant betting odds columns to keep only the features needed to evaluate home performance: `['Date', 'HomeTeam', 'AwayTeam', 'FTR', 'FTHG', 'FTAG', 'HS', 'AS', 'HST', 'AST']`. 
+*   **Code:** `df = df[columns_of_interest]`
+
+**Step 3: Type Fixes**
+*   **Action:** Converted the `Date` column from a string object into a pandas datetime object.
+*   **Code:** `df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)`
+
 
 ## 5. Access & Reuse (FAIR)
 
@@ -67,4 +81,15 @@ This section explains how the historical Premier League data and the 2020/21 yel
 - **Interoperable:** Plain CSV, comma-separated, dates in `dd/mm/yyyy`. It has 132 columns, but most are betting odds; we use 19 of them.
 - **Reusable:** There is no formal license, but the site has a "Fair data usage policy" (https://www.football-data.co.uk/contact.php). It says the free data "is intended for private individuals only for personal betting and/or academic interest and research, via manual download or at most light (twice per week maximum) automated download. It is NOT intended for commerical [sic] or data training projects." Our class project fits this, since we downloaded the file once by hand. Because of these limits, others can reuse our code and summary numbers for academic work, but they should download the raw file from football-data.co.uk themselves, and should not use it for commercial or AI-training projects.
 
+
+### EPL 2020/2021 - Dominic Aidoo
+
+*   **Findable:** [https://www.football-data.co.uk/englandm.php](https://www.football-data.co.uk/englandm.php) (Downloaded the `E0.csv` file under "Season 2020/2021").
+*   **Accessible:** Accessed on September 28, 2026. It is free to download
+*   **Interoperable:** `.csv` (Comma-Separated Values). 308 columns and 106 rows but most were stripped due to them been unimportant to our research question
+*   **Reusable:** The data is provided for free by Football-Data.co.uk for quantitative analysis and educational use. Others may freely reuse the processed data and notebooks we are producing in this repository for educational purposes. 
+
+
+
 ## 6. People in the data (CARE)
+
