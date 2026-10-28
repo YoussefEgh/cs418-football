@@ -4,6 +4,32 @@ Each of us adds our own part under the matching section.
 
 ## 1. Datasheets (primary datasets)
 
+### International Football Results (Hannan)
+
+**Source:** [martj42/international_results](https://github.com/martj42/international_results), file `results.csv`, commit `394fe81`
+
+**Motivation:**
+- The dataset was created by Mart Jurisoo, who states the reason for creating as "I was looking for a semi-definitive easy-to-read list of international football matches and couldn't find anything decent." Not documented by the publisher. 
+
+
+**Composition:** 
+- One row is one men’s senior international match. The size is 49,547 rows x 9 columns, and is from 30 Nov 1872 \- 26 Aug 2026, worldwide. The dataset aims to be complete, though it does exclude Olympics matches, women’s matches, and other non traditional matches. There are no empty cells, but the volume of  documented matches played before 1900 is thin. There are also no attendance, and other specific stats about the matches. 
+
+**Collection:** 
+- The dataset was collected from “Wikipedia, [rsssf.com](http://rsssf.com), and individual football associations’ websites”. The collection started in 2018, that was the first commit date. Regarding consent, these are public results about teams.
+
+**Preprocessing:**
+- Older matches use teams’ current names, for example: Ireland in 1882 is listed as Northern Ireland. Scores include extra time, but not penalty shootouts. 
+
+**Uses:** 
+- I think the main use case for this is for your own knowledge / studying, and also Kaggle notebooks. This data should not be used for women’s football, and other non traditional matches which are not a part of the dataset.
+
+**Distribution:**
+- The data file is a csv on github, and is licensed as CC0 1.0.
+
+**Maintenance:** 
+- There are 85 commits in 2026, by the creator and other contributors, showing it is updated consistently.
+
 
 ## 2. Scope
 
