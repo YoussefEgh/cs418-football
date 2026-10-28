@@ -21,7 +21,7 @@ Each of us adds our own part under the matching section.
   - 2020/21 also had a packed schedule and almost no preseason, and a few matches still had small crowds. These could affect results too, so our data suggests home advantage was weaker that season, but it does not show that missing fans *caused* it.
 
 ## 3. Codebook
-### 'epl_data.csv' - Historical Premier League Statistics (Nate Rodriguez)
+### `epl_data.csv` - Historical Premier League Statistics (Nate Rodriguez)
 
 | Column | Data Type | Units | Meaning | Allowed Values | Missing Values | Origin |
 |---|---|---|---|---|---|---|
@@ -35,11 +35,28 @@ Each of us adds our own part under the matching section.
 ### 'epl_2020.csv - Home Vs Away Yellow Card Analysis (Nate Rodriguez)
 | Column | Data Type | Units | Meaning | Allowed Values | Missing Values | Origin |
 |---|---|---|---|---|---|---|
-| 'Date' | Date | Calendar date | Date of the Premier League match | Valid match dates | Missing rows removed using 'dropna()' | 'data/epl_2020.csv' |
-| 'HY' | Numeric | Yellow cards | Number of yellow cards received by the home team | Nonnegative integers | Missing rows removed using 'dropna()' | 'data/epl_2020.csv' |
-| 'AY' | Numeric | Yellow cards | Number of yellow cards received by the away team | Nonnegative integers | Missing rows removed using 'dropna()' | 'data/epl_2020.csv' |
-| 'Group' | Integer | Group number | Sequential group of 20 matches sorted by date | 1-19 | None after creation | Derived in 'eda.ipynb' |
+| 'Date' | Date | Calendar date | Date of the Premier League match | Valid match dates | Missing rows removed using 'dropna()' | `data/epl_2020.csv` |
+| 'HY' | Numeric | Yellow cards | Number of yellow cards received by the home team | Nonnegative integers | Missing rows removed using 'dropna()' | `data/epl_2020.csv` |
+| 'AY' | Numeric | Yellow cards | Number of yellow cards received by the away team | Nonnegative integers | Missing rows removed using 'dropna()' | `data/epl_2020.csv` |
+| 'Group' | Integer | Group number | Sequential group of 20 matches sorted by date | 1-19 | None after creation | Derived in `eda.ipynb` |
+
 ## 4. Recipe
+### Data Preparation Recipe - Nate Rodriguez
+This section explains how the historical Premier League data and the 2020/21 yellow-card data are prepared for analysis.
+
+### A. Historical Premier League Dataset
+
+**Input file:** `data/epl_data.csv`
+**Code references:** 'data_acquisition.ipynb' and `eda.ipynb`
+1. **Acquire the raw data.** The historical Premier League dataset is stored in `data/epl_data.csv`. The original download source and any steps used to create this CSV must be confirmed in 'data_acquisition.ipynb'.
+2. **Load the CSV.** In `eda.ipynb`, under "EDA - home advantage across 10 Premier League seasons (Lu)", the dataset is loaded using Polars:
+   `history = pl.read_csv("data/epl_data.csv")`
+3. **Filter by season.** The notebook selects seasons beginning in 2016 or later using:
+   `history.filter(pl.col("season") >= 2016`
+4. **Check match totals.** The filtered records are grouped by `season`. The minimum and maximum values of `matches_played` are calculated for each season using `group_by()` and `agg()`, then sorted by season.
+5. **Check data types and missing records.** The displayed preparation code does not show explicit type conversions or dropped rows for this dataset. Any earlier cleaning must be checked in `data_acquisition.ipynb`.
+6. **Joins.** No join is performed in the historical filtering and match-total validation steps shown above. If this dataset is combined with another file later in the analysis, the join keys and matched/unmatched row counts must be added here.
+
 
 ## 5. Access & Reuse (FAIR)
 
