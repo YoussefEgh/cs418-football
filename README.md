@@ -132,3 +132,19 @@ Does home advantage shrink or disappear without fans, and does it come back when
 In the 2024/25 European dataset, home teams won 832 matches, compared to 644 away wins and 463 draws. Home teams averaged 1.54 goals per match, compared to 1.34 for away teams.
 
 Home-win percentages differed across European competitions. The Champions League had the highest home-win percentage at 50.79%, while the Bundesliga had the lowest at 38.69%.
+
+
+
+## Data Documentation
+
+Full documentation of our datasets, including their scope, codebooks, cleaning steps, and limitations, is available in [DATASHEET.md](DATASHEET.md).
+
+| Dataset | Source | License / Terms |
+|---|---|---|
+| International Football Results (Hannan) | [GitHub](https://github.com/martj42/international_results) | CC0 1.0 (Public Domain) |
+| European Football 2024/25 (Youssef) | [GitHub](https://github.com/tarekmasryo/football-matches-2025-dataset) | CC BY 4.0; original data subject to Football-Data.org terms |
+| Historical Premier League (Nate) | [Kaggle](https://www.kaggle.com/datasets/alibakikoyuncu/tm-epl-9293-ranking) | License not verified, but Kaggle Terms of Use apply. |
+| Premier League 2020/21 (Dominic) | [Football-Data.co.uk](https://www.football-data.co.uk/englandm.php) | Free for quantitative analysis and educational use |
+| Premier League 2025/26 (Lu) | [Football-Data.co.uk](https://www.football-data.co.uk/englandm.php) | No formal license; fair data usage policy for personal and academic use; commercial and data-training use restricted |
+
+**Biggest Limitation:** Our datasets cover different competitions and seasons, and some lack information such as stadium attendance and team strength. Therefore, we can compare patterns in home-field advantage, but we cannot determine exactly what causes those differences or generalize them to all football matches.
