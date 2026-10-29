@@ -53,6 +53,17 @@ Each of us adds our own part under the matching section.
 
 The target population is all men’s senior international matches ever played. The Access frame is the matches the creator found online and recorded. The sample is all 49,547 rows, and the time trend plot uses 1950 onward. Some of the limits include club / women’s football. Trends before 1950 are unreliable. I don’t think we can show the direct reason only based on this dataset of why home teams win more, but we can show that they win more. 
 
+### RQ - Home vs. Away Yellow Cards (Nate Rodriguez)
+**Research Question:** Do home teams receive fewer yellow cards during the 2020/21 Premier League season, when matches were largely played with spectators?
+
+**Target population:** Premier League matches played under different home and away conditions, particularly matches played without spectators. The goal is to understand whether home teams tend to receive by home and away teams.
+
+**Access frame:** The match-level data available in `date/epl_2020.csv`, which contains information about Premier League matches during the 2020/21 season, including match dates and yellow cards received by home and away teams.
+
+**Sample:** The 380 Premier League matches from the 2020/21 season included in the analysis. Each match provides the number of yellow cards received by the home team (`HY`) and away team (`AY`). The matches were sorted chronologically and organized into 19 groups of 20 matches.
+
+**Missing representation and limitations:** This analysis only examines one Premier League season and does not directly compare matches with and without spectators. Although the 2020/21 season was largely played without fans, the dataset does not include spectator attendance information. Other factors, such as referee decisions, team playing styles, fouls committed, and match intensity, may influence yellow-card totals. Therefore, the results cannot establish that the absence of spectators caused any difference in yellow cards. The findings also cannot automatically be generalized to other leagues or seasons.
+
 ## 3. Codebook
 ### `epl_data.csv` - Historical Premier League Statistics (Nate Rodriguez)
 
