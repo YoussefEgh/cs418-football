@@ -153,8 +153,7 @@ This section explains how the historical Premier League data and the 2020/21 yel
 10. **Output.** The analysis reports 380 matches, organized into 19 groups of 20 matches. The reported overall averages are 1.424 home yellow cards and 1.447 away yellow cards per match.
 
 ### International Football Results (Hannan)
-Download the file: [https\://raw.githubusercontent.com/martj42/international\_results/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv](https://raw.githubusercontent.com/martj42/international_results/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv), saved as data/results.csv. Load it, and parse the date as Date which would be 49,547 x 9\. Check to see that no rows were dropped. Derive the match\_type, goal\_diff, and year. Derive result in a copy called res. Filter per plot only for example: year \>= 1950\. 
->>>>>>> 21fbecb43aa0d39166f0ae3d1ff05ccef16ea65d
+Download the file: [https\://raw.githubusercontent.com/martj42/international\_results/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv](https://raw.githubusercontent.com/martj42/international_results/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv), saved as data/results.csv. Load it, and parse the date as Date which would be 49,547 x 9\. Check to see that no rows were dropped. Derive the match\_type, goal\_diff, and year. Derive result in a copy called res. Filter per plot only for example: year \>= 1950\.
 
 
 ## 5. Access & Reuse (FAIR)
@@ -193,7 +192,6 @@ This dataset does not record individual player names, but rather records nationa
 - Very small nations can at times give lopsided results like American Samoa’s 31-0 loss. 
 
 The data is free and public domain, and obviously this should not be used to rank a nation's overall wealth for non football related information.
->>>>>>> 21fbecb43aa0d39166f0ae3d1ff05ccef16ea65d
 
 ### EPL 2020/2021 - Dominic Aidoo
 
