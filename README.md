@@ -22,6 +22,8 @@ What's in it:
 
 Quick look: Home teams averaged 1.76 goals vs 1.18 away. At home venues the home team won 50.7%, and at neutral venues the team listed won 44.2%, a gap of about 6.5 points.
 
+**Data documentation:** [martj42/international_results](https://github.com/martj42/international_results), CC0 1.0 (public domain). Full details are in [DATASHEET.md](DATASHEET.md).
+
 
 ### Primary dataset 2: Top 5 leagues & Champions League Football Matches 2024/2025 (Youssef)
 

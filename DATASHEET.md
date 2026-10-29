@@ -85,7 +85,7 @@ The target population is all men’s senior international matches ever played. T
 
 ### European Football Matches 2024/2025 (Youssef)
 
-**Question:** How does home-field advantage vary across European football competitions when comparing home-win, away-win, and draw percentages?
+**Research Question:** How does home-field advantage vary across European football competitions when comparing home-win, away-win, and draw percentages?
 
 **Target Population:** The target population is basically all football matches played during the 2024/2025 season across the Premier League, La Liga, Serie A, Bundesliga, Ligue 1, and UEFA Champions League (for men's soccer). 
 
@@ -96,6 +96,16 @@ The target population is all men’s senior international matches ever played. T
 **Limitations:** This dataset contains only 6 competitions/leagues. They are the most competitive, but it's still not enough to generalize our findings to all football leagues or other seasons. Also, attendance numbers are not recorded in the data.
 
 
+### RQ - Home vs. Away Yellow Cards (Nate Rodriguez)
+**Research Question:** Do home teams receive fewer yellow cards during the 2020/21 Premier League season, when matches were largely played with spectators?
+
+**Target population:** Premier League matches played under different home and away conditions, particularly matches played without spectators. The goal is to understand whether home teams tend to receive by home and away teams.
+
+**Access frame:** The match-level data available in `date/epl_2020.csv`, which contains information about Premier League matches during the 2020/21 season, including match dates and yellow cards received by home and away teams.
+
+**Sample:** The 380 Premier League matches from the 2020/21 season included in the analysis. Each match provides the number of yellow cards received by the home team (`HY`) and away team (`AY`). The matches were sorted chronologically and organized into 19 groups of 20 matches.
+
+**Missing representation and limitations:** This analysis only examines one Premier League season and does not directly compare matches with and without spectators. Although the 2020/21 season was largely played without fans, the dataset does not include spectator attendance information. Other factors, such as referee decisions, team playing styles, fouls committed, and match intensity, may influence yellow-card totals. Therefore, the results cannot establish that the absence of spectators caused any difference in yellow cards. The findings also cannot automatically be generalized to other leagues or seasons.
 
 ## 3. Codebook
 ### `epl_data.csv` - Historical Premier League Statistics (Nate Rodriguez)
@@ -179,7 +189,21 @@ This section explains how the historical Premier League data and the 2020/21 yel
 5. **Check data types and missing records.** The displayed preparation code does not show explicit type conversions or dropped rows for this dataset. Any earlier cleaning must be checked in `data_acquisition.ipynb`.
 6. **Joins.** No join is performed in the historical filtering and match-total validation steps shown above. If this dataset is combined with another file later in the analysis, the join keys and matched/unmatched row counts must be added here.
 
-### B. Home Vs. Away Yellow Card Analysis
+### B. Data Preparation Recipe - Dominic Aidoo
+
+**Step 1: Downloads & Loading**
+*   **Action:** Downloaded the primary 2020/2021 match dataset (`epl_2020.csv`) from Football-Data.co.uk.
+*   **Code:** `df = pd.read_csv('data/epl_2020.csv')`
+
+**Step 2: Filters**
+*   **Action:** Filtered out the irrelevant betting odds columns to keep only the features needed to evaluate home performance: `['Date', 'HomeTeam', 'AwayTeam', 'FTR', 'FTHG', 'FTAG', 'HS', 'AS', 'HST', 'AST']`. 
+*   **Code:** `df = df[columns_of_interest]`
+
+**Step 3: Type Fixes**
+*   **Action:** Converted the `Date` column from a string object into a pandas datetime object.
+*   **Code:** `df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)`
+
+### C. Home Vs. Away Yellow Card Analysis
 **Input file:** `data/epl_2020.csv`
 **Code reference:** `eda.ipynb`, "Home vs Away Yellow Card Analysis (2020/21 Premier League) - Nate Rodriguez"
 1. **Acquire the raw data.** The match-level dataset is stored in `data/epl_2020.csv`.
@@ -209,7 +233,7 @@ This section explains how the historical Premier League data and the 2020/21 yel
 10. **Output.** The analysis reports 380 matches, organized into 19 groups of 20 matches. The reported overall averages are 1.424 home yellow cards and 1.447 away yellow cards per match.
 
 ### International Football Results (Hannan)
-Download the file: [https\://raw.githubusercontent.com/martj42/international\_results/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv](https://raw.githubusercontent.com/martj42/international_results/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv), saved as data/results.csv. Load it, and parse the date as Date which would be 49,547 x 9\. Check to see that no rows were dropped. Derive the match\_type, goal\_diff, and year. Derive result in a copy called res. Filter per plot only for example: year \>= 1950\. 
+Download the file: [https\://raw.githubusercontent.com/martj42/international\_results/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv](https://raw.githubusercontent.com/martj42/international_results/394fe81893b062fbc2cf6257e988ac7cc4c039a1/results.csv), saved as data/results.csv. Load it, and parse the date as Date which would be 49,547 x 9\. Check to see that no rows were dropped. Derive the match\_type, goal\_diff, and year. Derive result in a copy called res. Filter per plot only for example: year \>= 1950\.
 
 ### European Football Matches 2024/2025 (Youssef)
 
@@ -247,6 +271,14 @@ Download the file: [https\://raw.githubusercontent.com/martj42/international\_re
 - **Accessible:** Free to download, no account needed. We accessed the full 2025/26 season (380 matches) on 2026-10-12. The site keeps updating this file during the season, so here is the SHA-256 of our copy: `3e3a8352f9ada6789c508d6ca184424421fed56a30400904a4a327c583407e62`.
 - **Interoperable:** Plain CSV, comma-separated, dates in `dd/mm/yyyy`. It has 132 columns, but most are betting odds; we use 19 of them.
 - **Reusable:** There is no formal license, but the site has a "Fair data usage policy" (https://www.football-data.co.uk/contact.php). It says the free data "is intended for private individuals only for personal betting and/or academic interest and research, via manual download or at most light (twice per week maximum) automated download. It is NOT intended for commerical [sic] or data training projects." Our class project fits this, since we downloaded the file once by hand. Because of these limits, others can reuse our code and summary numbers for academic work, but they should download the raw file from football-data.co.uk themselves, and should not use it for commercial or AI-training projects.
+
+### EPL 2020/2021 - Dominic Aidoo
+
+*   **Findable:** [https://www.football-data.co.uk/englandm.php](https://www.football-data.co.uk/englandm.php) (Downloaded the `E0.csv` file under "Season 2020/2021").
+*   **Accessible:** Accessed on September 28, 2026. It is free to download
+*   **Interoperable:** `.csv` (Comma-Separated Values). 308 columns and 106 rows but most were stripped due to them been unimportant to our research question
+*   **Reusable:** The data is provided for free by Football-Data.co.uk for quantitative analysis and educational use. Others may freely reuse the processed data and notebooks we are producing in this repository for educational purposes. 
+
 
 ### International Football Results (Hannan)
 
@@ -289,3 +321,15 @@ This dataset mainly records football teams and match results so there aren't any
 - **Ethical considerations:** The results should not be used to make unfair judgments about individual players, coaches, or referees. For example, a team's losses should not automatically be blamed on a particular player or referee without additional information.
 
 So, this dataset should be used responsibly by recognizing that it only represents certain competitions and that it does not provide a complete picture of football performance.
+
+
+### EPL 2020/2021 - Dominic Aidoo
+
+While the dataset consists of numbers, it indirectly captures the behaviors and performances of three distinct groups of people:
+*   **Players:** Represented collectively through team-level offensive metrics (Goals, Shots, Shots on Target).
+*   **Referees:** Represented indirectly through the disciplinary actions they take (Home/Away Fouls and Yellow/Red Cards).
+*   **Fans:** Represented contextually by comparing the empty stadium matches against normal, fully-attended seasons.
+
+**Misrepresented Groups**
+Because this dataset focuses exclusively on the English Premier League, it inherently only represents elite, male athletes competing in a highly funded European league. Using this data to make universal claims about the sport as a whole misrepresents youth leagues, women leagues, etc. 
+
