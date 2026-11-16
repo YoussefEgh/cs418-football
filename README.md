@@ -161,6 +161,12 @@ Home-win rates differed significantly across Europe's five major domestic league
 
 ![Home-win rates range from 39% to 51% across six competitions](figures/finding-two.png)
 
+### Finding 3: Away Teams Out-Won Home Teams Only in the Season Played Without Fans
+
+2020/21 gives us a rare look at what happens when the crowd is (mostly) gone, so we compared it with the nine Premier League seasons around it (2016/17 to 2025/26, 380 matches each). Home teams won 37.9% of matches in 2020/21 (95% CI 33.2 to 42.9%) versus 45.4% in the other nine seasons combined (95% CI 43.7 to 47.1%). A two-proportion z-test gives p = 0.005, so a 7.5 point drop this large would be unlikely if the home win rate had not really changed, but the p-value alone does not tell us why it changed. One worry is that 2020/21 was just a bad year for home teams, since the home win rate also moves around a lot in normal seasons (40.8% in 2024/25, 49.2% in 2016/17). To check this we looked at the gap between home and away win rates in each season. In the nine seasons with fans home teams always won at least 6.1 points more often than away teams (mean +14.2), while in 2020/21 the gap was -2.4, about 3.5 standard deviations below the mean. We also matched the 2020/21 counts against a second, match-by-match file and got the same totals (144 home wins, 83 draws, 153 away wins). Still, this is an association and not proof that fans cause home advantage: 2020/21 also had a packed schedule, almost no preseason and COVID cases in squads, and we only have one season like this.
+
+![Away teams out-won home teams only in the season played without fans](figures/finding-3.png)
+
 
 ## Finding 4 - Away Teams Faced a Larger Yellow-Card Disparity in 2025/26
 
