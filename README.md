@@ -149,6 +149,11 @@ Full documentation of our datasets, including their scope, codebooks, cleaning s
 
 **Biggest Limitation:** Our datasets cover different competitions and seasons, and some lack information such as stadium attendance and team strength. Therefore, we can compare patterns in home-field advantage, but we cannot determine exactly what causes those differences or generalize them to all football matches.
 
+### Finding 1: Playing at Home Adds About 9 Points to a Team's Win Rate
+
+I compared 36,389 home venue international matches with around 13,000 neutral venue ones. In those, home teams won 50.7 percent of the time, and the first listed team at a neutral venue won 44.2 percent of the time. This is a 6.5 point gap, since stronger teams could just be ending up in one group, I built a pre match 'Elo' like ratings from past results and controlled for them in a logistic regression with around 45,000 matches. After that, playing at home was worth about +9.0 points. Then I tried to see how this holds up by first splitting the matches into 8 strength bands, and home teams still won more in every band, by 6 to 11 points. I also checked whether the effect changes for competitive vs friendly games or over time. Neither finding was significant, so no evidence was found that it changes. Overall this shows that playing at home is linked to winning more though it doesn't tell us why because there is no attendance or travel data.
+
+![Home teams win about 9 points more often than equally rated teams at neutral venues](figures/finding-one.png)
 
 ### Finding 2: Home-Win Rates Vary Across European Competitions
 
