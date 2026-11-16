@@ -150,9 +150,15 @@ Full documentation of our datasets, including their scope, codebooks, cleaning s
 **Biggest Limitation:** Our datasets cover different competitions and seasons, and some lack information such as stadium attendance and team strength. Therefore, we can compare patterns in home-field advantage, but we cannot determine exactly what causes those differences or generalize them to all football matches.
 
 
+### Finding 2: Home-Win Rates Vary Across European Competitions
+
+Home-win rates differed significantly across Europe's five major domestic leagues and the UEFA Champions League during the 2024/25 season (chi-square test, p = 0.0404). The Champions League had the highest home-win rate at 50.79% (95% CI: 43.72%–57.83%), while the Bundesliga had the lowest at 38.69% (95% CI: 33.40%–44.26%). However, when we excluded the Champions League, the differences among the five domestic leagues were not statistically significant (p = 0.1753). As a robustness check, we repeated the test using all three match outcomes—home wins, away wins, and draws—and found a similar pattern: significant variation across all six competitions (p = 0.0105), but not among the five domestic leagues alone (p = 0.2240). One possible explanation is that the Champions League has a different competition format and team matchups, which may influence match outcomes. These results do not establish that competition format caused the differences or that home advantage is identical across domestic leagues.
+
+![Home-win rates range from 39% to 51% across six competitions](figures/finding-two.png)
+
+
 ## Finding 4 - Away Teams Faced a Larger Yellow-Card Disparity in 2025/26
 
 Away teams received more yellow cards per 100 fouls than home teams in both Premier League seasons, but the difference was larger in 2025/26 than in 2020/21. During the largely fan-free 2020/21 season, home teams received 12.68 yellow cards per 100 fouls compared with 13.72 for away teams, a difference of 1.03 (two-proportion z-test, p = 0.1645). In 2025/26, home teams received 15.64 compared with 18.94 for away teams, a difference of 3.30 (p = 0.0000752). The away-home gap increased by 2.27 cards per 100 fouls, with a 95% match-level bootstrap confidence interval of 0.31 to 4.26. To check whether a few teams were driving the difference, we compared rates across clubs and found that 17 out of 20 teams had higher away rates in 2025/26, compared with 11 of 20 in 2020/21. Although these findings suggest a stronger home-away disciplinary disparity in 2025/26, differences in foul severity, team composition, and other factors may explain this pattern. Therefore, the results do not establish that crowd presence caused the difference.
-
 
 ![Away teams faced a larger yellow-card disparity in 2025/26](figures/finding-four.png)
