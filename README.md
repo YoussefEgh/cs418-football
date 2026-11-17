@@ -4,6 +4,33 @@ Home-Field Advantage in Soccer - How does playing at home affect team performanc
 
 ## Group Members: Youssef Elghawabi, Dominic Aidoo, Nate Rodriguez, Zonghong Lu, Hannan Shahid
 
+### Main Findings(Narrative Analysis)
+
+### Finding 1: Playing at Home Adds About 9 Points to a Team's Win Rate
+
+I compared 36,389 home venue international matches with around 13,000 neutral venue ones. In those, home teams won 50.7 percent of the time, and the first listed team at a neutral venue won 44.2 percent of the time. This is a 6.5 point gap, since stronger teams could just be ending up in one group, I built a pre match 'Elo' like ratings from past results and controlled for them in a logistic regression with around 45,000 matches. After that, playing at home was worth about +9.0 points. Then I tried to see how this holds up by first splitting the matches into 8 strength bands, and home teams still won more in every band, by 6 to 11 points. I also checked whether the effect changes for competitive vs friendly games or over time. Neither finding was significant, so no evidence was found that it changes. Overall this shows that playing at home is linked to winning more though it doesn't tell us why because there is no attendance or travel data.
+
+![Home teams win about 9 points more often than equally rated teams at neutral venues](figures/finding-one.png)
+
+### Finding 2: Home-Win Rates Vary Across European Competitions
+
+Home-win rates differed significantly across Europe's five major domestic leagues and the UEFA Champions League during the 2024/25 season (chi-square test, p = 0.0404). The Champions League had the highest home-win rate at 50.79% (95% CI: 43.72%–57.83%), while the Bundesliga had the lowest at 38.69% (95% CI: 33.40%–44.26%). However, when we excluded the Champions League, the differences among the five domestic leagues were not statistically significant (p = 0.1753). As a robustness check, we repeated the test using all three match outcomes—home wins, away wins, and draws—and found a similar pattern: significant variation across all six competitions (p = 0.0105), but not among the five domestic leagues alone (p = 0.2240). One possible explanation is that the Champions League has a different competition format and team matchups, which may influence match outcomes. These results do not establish that competition format caused the differences or that home advantage is identical across domestic leagues.
+
+![Home-win rates range from 39% to 51% across six competitions](figures/finding-two.png)
+
+### Finding 3: Away Teams Out-Won Home Teams Only in the Season Played Without Fans
+
+2020/21 gives us a rare look at what happens when the crowd is (mostly) gone, so we compared it with the nine Premier League seasons around it (2016/17 to 2025/26, 380 matches each). Home teams won 37.9% of matches in 2020/21 (95% CI 33.2 to 42.9%) versus 45.4% in the other nine seasons combined (95% CI 43.7 to 47.1%). A two-proportion z-test gives p = 0.005, so a 7.5 point drop this large would be unlikely if the home win rate had not really changed, but the p-value alone does not tell us why it changed. One worry is that 2020/21 was just a bad year for home teams, since the home win rate also moves around a lot in normal seasons (40.8% in 2024/25, 49.2% in 2016/17). To check this we looked at the gap between home and away win rates in each season. In the nine seasons with fans home teams always won at least 6.1 points more often than away teams (mean +14.2), while in 2020/21 the gap was -2.4, about 3.5 standard deviations below the mean. We also matched the 2020/21 counts against a second, match-by-match file and got the same totals (144 home wins, 83 draws, 153 away wins). Still, this is an association and not proof that fans cause home advantage: 2020/21 also had a packed schedule, almost no preseason and COVID cases in squads, and we only have one season like this.
+
+![Away teams out-won home teams only in the season played without fans](figures/finding-3.png)
+
+
+## Finding 4 - Away Teams Faced a Larger Yellow-Card Disparity in 2025/26
+
+Away teams received more yellow cards per 100 fouls than home teams in both Premier League seasons, but the difference was larger in 2025/26 than in 2020/21. During the largely fan-free 2020/21 season, home teams received 12.68 yellow cards per 100 fouls compared with 13.72 for away teams, a difference of 1.03 (two-proportion z-test, p = 0.1645). In 2025/26, home teams received 15.64 compared with 18.94 for away teams, a difference of 3.30 (p = 0.0000752). The away-home gap increased by 2.27 cards per 100 fouls, with a 95% match-level bootstrap confidence interval of 0.31 to 4.26. To check whether a few teams were driving the difference, we compared rates across clubs and found that 17 out of 20 teams had higher away rates in 2025/26, compared with 11 of 20 in 2020/21. Although these findings suggest a stronger home-away disciplinary disparity in 2025/26, differences in foul severity, team composition, and other factors may explain this pattern. Therefore, the results do not establish that crowd presence caused the difference.
+
+![Away teams faced a larger yellow-card disparity in 2025/26](figures/finding-four.png)
+
 
 ### Primary dataset 1: International football results (Hannan)
 I got this dataset from: (https://github.com/martj42/international_results/blob/master/results.csv). The file is 'results.csv', and it's loaded in 'International_matches.ipynb'.
@@ -148,6 +175,8 @@ Full documentation of our datasets, including their scope, codebooks, cleaning s
 | Premier League 2025/26 (Lu) | [Football-Data.co.uk](https://www.football-data.co.uk/englandm.php) | No formal license; fair data usage policy for personal and academic use; commercial and data-training use restricted |
 
 **Biggest Limitation:** Our datasets cover different competitions and seasons, and some lack information such as stadium attendance and team strength. Therefore, we can compare patterns in home-field advantage, but we cannot determine exactly what causes those differences or generalize them to all football matches.
+
+### Findings That Answer Our Research Questions
 
 ### Finding 1: Playing at Home Adds About 9 Points to a Team's Win Rate
 
